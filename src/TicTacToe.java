@@ -13,15 +13,17 @@ public class TicTacToe
         clearBoard();
         showBoard();
         boolean done = false;
-        String playAgain = "";
+        String playAgain = "Y";
 
         //to play again1
 
         do
         {
+            clearBoard();
             playerMove();
             playAgain = SafeInput.getNonZeroLenString(in, "To play again press Y. Press anything else to exit");
-            if (playAgain.equalsIgnoreCase("Y")) {
+            if (playAgain.equalsIgnoreCase("Y"))
+            {
                 clearBoard();
                 showBoard();
                 playerMove();
@@ -107,7 +109,7 @@ public class TicTacToe
         System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
     }
 
-    //Getting a move from player A or first player
+    //Getting the moves from the players
     public static void playerMove ()
     {
         Scanner in = new Scanner(System.in);
